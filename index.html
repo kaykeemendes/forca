@@ -1,0 +1,94 @@
+﻿  <!DOCTYPE html>
+  <html lang="pt-br" ng-app="Forca">
+  <head>
+    <meta charset="utf-8">   
+    <title>JOGO DA FORCA</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"/>  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  </head>
+  <body >  
+</br>
+<audio autoplay="autoplay">
+    <source src="music/music.mp3" type="audio/mp3" loop="infinite" />
+</audio>
+
+ 
+  <p></p>
+   <div  class="container" ng-controller="jogo">
+   <table>
+   <tr><td><img  width="380px" height="450px" ng-src="{{img}}"/></td> 
+   <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp</td> 
+      <td> <img  ng-src="{{imgGanhar}}"/></td> 
+   </tr>
+</table>
+<div>
+
+</div>
+         
+      <div class="row" align ="center">          
+            <div class="col-xs-12">
+              
+              <span ng-repeat="letra in palavraSecreta track by $index">
+              <span style="font-size:30px" ng-bind="letra"/>
+            </span>
+                      </div>         
+          <div class="col-xs-12"> 
+          </br>           
+                    <form name="teclado" action="#" ng-click="count = count + 1; " ng-init="count=0">
+                    <input type="image" src="img/A.jpg" width="38px" height="38px" value="A" ng-disabled="contem('A')" ng-click="digitar('A')"/> 
+                    <input type="image" src="img/B.jpg" width="38px" height="38px" value="B" ng-disabled="contem('B')" ng-click="digitar('B')"/> 
+                    <input type="image" src="img/C.jpg" width="38px" height="38px" value="C" ng-disabled="contem('C')" ng-click="digitar('C')"/> 
+                    <input type="image" src="img/D.jpg" width="38px" height="38px" value="D" ng-disabled="contem('D')" ng-click="digitar('D')"/> 
+                    <input type="image" src="img/E.jpg" width="38px" height="38px" value="E" ng-disabled="contem('E')" ng-click="digitar('E')"/> 
+                    <input type="image" src="img/F.jpg" width="38px" height="38px" value="F" ng-disabled="contem('F')" ng-click="digitar('F')"/> 
+                    <input type="image" src="img/G.jpg" width="38px" height="38px" value="G" ng-disabled="contem('G')" ng-click="digitar('G')"/> 
+                    <input type="image" src="img/H.jpg" width="38px" height="38px" value="H" ng-disabled="contem('H')" ng-click="digitar('H')"/> 
+                    <input type="image" src="img/I.jpg" width="38px" height="38px" value="I" ng-disabled="contem('I')" ng-click="digitar('I')"/> 
+                    <input type="image" src="img/J.jpg" width="38px" height="38px" value="J" ng-disabled="contem('J')" ng-click="digitar('J')"/> 
+                    <input type="image" src="img/K.jpg" width="38px" height="38px" value="K" ng-disabled="contem('K')" ng-click="digitar('K')"/> 
+                    <input type="image" src="img/L.jpg" width="38px" height="38px" value="L" ng-disabled="contem('L')" ng-click="digitar('L')"/> 
+                    <input type="image" src="img/M.jpg" width="38px" height="38px" value="M" ng-disabled="contem('M')" ng-click="digitar('M')"/>       
+                    <input type="image" src="img/N.jpg" width="38px" height="38px" value="N" ng-disabled="contem('N')" ng-click="digitar('N')"/> 
+                    <input type="image" src="img/O.jpg" width="38px" height="38px" value="O" ng-disabled="contem('O')" ng-click="digitar('O')"/> 
+                    <input type="image" src="img/P.jpg" width="38px" height="38px" value="P" ng-disabled="contem('P')" ng-click="digitar('P')"/>       
+                    <input type="image" src="img/Q.jpg" width="38px" height="38px" value="Q" ng-disabled="contem('Q')" ng-click="digitar('Q')"/> 
+                    <input type="image" src="img/R.jpg" width="38px" height="38px" value="R" ng-disabled="contem('R')" ng-click="digitar('R')"/> 
+                    <input type="image" src="img/S.jpg" width="38px" height="38px" value="S" ng-disabled="contem('S')" ng-click="digitar('S')"/>       
+                    <input type="image" src="img/T.jpg" width="38px" height="38px" value="T" ng-disabled="contem('T')" ng-click="digitar('T')"/>                       
+                    <input type="image" src="img/U.jpg" width="38px" height="38px" value="U" ng-disabled="contem('U')" ng-click="digitar('U')"/> 
+                    <input type="image" src="img/V.jpg" width="38px" height="38px" value="V" ng-disabled="contem('V')" ng-click="digitar('V')"/> 
+                    <input type="image" src="img/W.jpg" width="38px" height="38px" value="W" ng-disabled="contem('W')" ng-click="digitar('W')"/> 
+                    <input type="image" src="img/X.jpg" width="38px" height="38px" value="X" ng-disabled="contem('X')" ng-click="digitar('X')"/>       
+                    <input type="image" src="img/Y.jpg" width="38px" height="38px" value="Y" ng-disabled="contem('Y')" ng-click="digitar('Y')"/>       
+                    <input type="image" src="img/Z.jpg" width="38px" height="38px" value="Z" ng-disabled="contem('Z')" ng-click="digitar('Z')"/>  
+                        
+              </form>    
+                               
+                 <div class="alert alert-danger" align="center">
+                 <button id="button1id" name="button1id" class="btn btn-default" ng-disabled="true">Tentativas Feitas: {{count}} 
+                 </button>
+                  <button id="button2id" name="button1id" class="btn btn-warning" ng-click="reiniciar()" >Novo Jogo</button>
+              <button id="button3id" name="button2id" class="btn btn-danger" data-toggle="popover" title="A sua dica é:" data-content="{{dica}}" >Dica da Palavra</button>
+                      </div>      
+      </div>      
+   </div>
+    <script src="js/angular.min.js"></script>    
+    <script src="js/controllers.js"></script>
+
+
+    
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+  </body>
+  </html>
+ <!-- <input type="text" ng-keyup="verificaletra(digitada)" ng-model="digitada"/> -->
